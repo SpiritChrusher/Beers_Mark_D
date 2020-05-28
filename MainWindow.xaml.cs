@@ -1,0 +1,59 @@
+﻿using Beers_MarkD.Backend;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Beers_MarkD
+{
+    /**
+     * The logic behind the main window
+     **/
+    public partial class MainWindow : Window
+    {
+        private static readonly log4net.ILog log = log4net.LogManager.
+            GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+       
+        private void namebox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (namebox.Text.Length > 0)
+            {
+
+
+                if (e.Key == Key.Return)
+                {
+
+                    Person user = new Person(namebox.Text);
+                    Window1 newWindow = new Window1();
+                    newWindow.username.Text = namebox.Text;
+                    
+                    newWindow.Show();
+                    this.Close();
+                    log.Info($"Moving to {newWindow.Name} window");
+                }
+            }
+            else
+            {
+                problemtext.Text = "The name cannot be empty!";
+            }
+
+        }
+    }
+}

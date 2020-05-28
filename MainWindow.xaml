@@ -1,0 +1,26 @@
+﻿<Window x:Class="Beers_MarkD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Beers_MarkD"
+        mc:Ignorable="d"
+        Title="BeerProgram" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+        <Label Content="Beers for everyone" Grid.Column="1" HorizontalAlignment="Center"/>
+        <TextBox x:Name="namebox" Text="Enter your name here!" AcceptsTab="True" KeyDown="namebox_KeyDown"
+                 Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="200" TextAlignment="Center" />
+        <TextBlock x:Name="problemtext" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
